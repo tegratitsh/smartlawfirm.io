@@ -1,0 +1,37 @@
+{% extends "templates_bases.html" %}
+
+
+{% block content %}
+
+{% include "Law/law_navbar.html" %}
+
+{% include "Law/law_carousel.html" %}
+
+<div class="container">
+    <h2 class="branch">NOS PRINCIPAUX DOMAINES D'INTERVENTION</h2>
+
+
+
+{% include "Law/law_topic.html" %}
+
+
+<div class="row">
+    <h4 class="branch">Quel Domaine vous interesse le plus ?</h4>
+</div>
+
+
+{% include "Law/law_field_interest.html" %}
+
+
+<div class="alert alert-success field-tag">
+  <strong>Désormais !</strong>  vous aurez une personnalité juridique qui renforcera votre crédibilité en tant qu'entrepreneur. 
+        Sécurisez vos transactions immobilières grâce à une rédaction officielle garantissant leur validité. 
+        Affirmez votre présence sur le marché avec une structure légale qui inspire confiance et professionnalisme.
+</div>
+
+</div>
+{% include "Law/law_footer.html" %}
+
+
+
+{% endblock content %}

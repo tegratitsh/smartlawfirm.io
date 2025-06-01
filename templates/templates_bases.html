@@ -1,0 +1,678 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>SMART LAW FIRM - Cabinet Juridique</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        box-sizing: border-box;
+    }
+
+    body{
+        padding-top: 50px; /* Ajustez la valeur selon la hauteur de votre navbar */
+        margin: 0; padding: 0;
+    }
+
+    /* SECTION NAVBAR : MODIFICATION SUR L'ENSEMBLE DES PAGES (TEMPLATES) */
+  .custom-navbar {
+    background-color: transparent;
+    background:#012D53;
+    opacity:initial;
+    padding: 10px 20px;
+    box-shadow: none; 
+  }
+
+  /* Titre au survol */
+  .custom-navbar .navbar-brand:hover {
+    color: #fff;
+  }
+
+  /* Agrandir les liens */
+  .custom-navbar .nav-link {
+    font-size: 1.2rem; /* Taille augmentée des liens */
+    color: #fff; /* Couleur blanche pour les liens */
+    transition: color 0.3s ease-in-out; /* Effet de transition */
+  }
+
+  .navbar-brand {
+    color: gold; /* Définit la couleur gold pour le lien "SMART LAW FIRM" */
+  }
+
+  /* Effet au survol (hover) */
+  .custom-navbar .nav-link:hover {
+    color: gold;
+    text-decoration:none; 
+  }
+
+  /* SECTION NAVBAR : FIN DE MODIFICATION NAVABR */
+   /* CAROUSEL SECTION : MODIFICATION UNIQUEMENT SUR LE CAROUSOL */
+   #carouselExampleCaptions{
+    margin-top: 63px;
+  }
+  .carousel-item{
+    height: 100vh;
+    min-height: 300px;
+  }
+
+
+  .carousel-caption{
+    bottom: 190px;
+    z-index: 2;
+  }
+
+    .carousel-caption h2{
+      color: #fff;
+      font-size: 40px;
+      margin: auto;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      width: 100%;
+
+      
+    }
+    .carousel-caption h3{
+      font-size: 40px;
+      text-align: justify;
+      color: gold;
+      
+    }
+
+    .carousel-inner::before{
+      content: "";
+      position: absolute;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0,0,0,0.5);
+      width: 100%;
+      z-index: 1;
+    }
+
+    /*  CAROUSEL SECTION : FIN DE LA MODIFICATION */
+
+
+    /*  MODIFICATION DES TITRES INDEPENDANTS H2 */
+
+    .branch{
+      margin: 20px;
+      color: #012D53;
+      font-size: 25px;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .field-context{
+      color: #012D53;
+      font-size: 23px;
+      text-align: center;
+    }
+    .field-slf{
+      font-size: 30px;
+      text-align: center;
+    }
+    .field-smart{
+      color: #012D53;
+      font-size: 40px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .field-tag{
+      color: #012D53;
+      font-size: 17px;
+      text-align: justify;
+    }
+
+    /*  FIN DE MODIFICATION DES TITRES INDEPENDANTS H2 */
+
+    /* MOFIFICATION 'CARD' SUR LE TEMPLATE DE BASE UNIQUEMENT */
+
+    .card {
+      background-color: inherit; /* Correspond à la couleur du body */
+      border: none;           /* Supprime la bordure de la carte */
+      box-shadow: none;          /* Supprime l'effet 3D de l'ombre */
+      justify-content: space-between;
+      margin: 10px 10px;
+      
+    }
+    .card ul li a{
+      font-size: 16px;
+    }
+    .card-header{
+      background-color: transparent;
+      background:#012D53;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .card-header a{
+      color: gold;
+      text-decoration: none;
+    }
+
+    .card li a{
+      color: #000;
+      text-decoration: none;
+    }
+    .card-body {
+      padding: 10px;             /* Ajuste l'espacement interne pour un meilleur rendu */
+    }
+    .card-body h5{
+      color: #1a0d94;
+      font-size: 20px;
+    }
+    .card-body h5 a{
+      color: rgba(26,13,110,1);
+      text-decoration: none;
+    }
+    
+    .row.align-buttons {
+    align-items: flex-start; /* Assure que tout commence à la même hauteur */
+  }
+
+  .image-container {
+    display: flex; /* Conteneur flexible */
+    flex-direction: column; /* Aligne les éléments verticalement */
+    justify-content: space-between; /* Assure une séparation égale */
+  }
+
+  .card-img-top {
+    height: 200px; /* Hauteur uniforme pour toutes les images */
+    object-fit: cover; /* Ajuster l'image sans déformation */
+  }
+
+    
+  .card-title{
+    color: red;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .card-body h5 a{
+    color: #012D53;
+  }
+
+
+
+  .card-body h4 a{
+    color: red;
+    text-decoration: none;
+  }
+  .card-body p{
+    font-size: larger;
+    font-weight: bold;
+    text-align: justify;
+  }
+
+  .card-body ul li a{
+    color: green;
+    font-weight: bold;
+    font-size: 17px;
+  }
+
+  .card-img-top {
+    box-shadow: none;
+  }
+  
+  /* FIN DE MODIFICATION CARD TEMPLATE SECTION */
+
+  /*  MODIFICATION DE LA PAGE CONTACT b89f3b */
+
+  .contact-page{
+     background-position: center;
+     background-size: cover;
+     margin-top: 70px;
+    }
+    .contact-page .contact-text{
+      margin-top: 73px;
+      padding: 20px;
+    }
+    .contact-page .contact-text p{
+      font-size: 20px;
+      text-align: justify;
+    }
+    .contact-page .contact-text h2{
+      color: #012D53;
+      font-weight: bold;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+    .contact-page .contact-text h3{
+      color: #012D53;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+    }
+    .contact-page .contact-text h5{
+      color: #fff;
+      margin-top: 10px;
+      font-size: 20px;
+      text-align: justify;
+    }
+    .contact-page .contact-text img{
+     display: block;
+      width: 270px;
+      height: auto;
+      text-align: center;
+      margin-left: auto ;
+      margin-right: auto;
+      margin-bottom: 20px;
+    }
+    .contact-page .contact-text h6{
+      font-weight: bold;
+      font-size: 17px;
+    }
+    .contact-page .contact-text a{
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: red;
+    }
+
+    .contact-page .contact-form p{
+      color: #012D53;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .contact-page .contact-form{
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Pour centrer sur toute la hauteur */
+
+    }
+    .contact-page .contact-form h2{
+      color: gold;
+    }
+    .contact-page .contact-form .form-container{
+      color: gold;
+    }
+  /* FIN DE MODIFICATION DE LA PAGE CONTACT */
+
+   /* DEBUT DE MODIFICATION DES BOUTON SUR L'ENSEMBLE DE PAGES*/
+    .btn-primary {
+      background-color: #012053; /* Bleu sombre */
+      border-color:#012D53;    /* Même couleur pour les bordures */
+      color: #fff;
+      font-weight:initial;        /* Texte en gras */
+      padding: 10px 20px;       /* Espacement intérieur */
+      border-radius: 5px; 
+      margin: 5px;      /* Coins arrondis */
+      transition: all 0.3s ease; /* Animation lors du survol */
+      width: 30%;
+    }
+
+    .btn-primary a{
+      text-decoration: none;    /* Supprime le soulignement */
+      font-size: large;
+      color: #fff;             /* Garantit que le texte reste blanc */
+    }
+
+    /* Effet de survol */
+    .btn-primary:hover {
+      background-color:red; /* Teinte légèrement plus foncée */
+      border-color: none;    /* Bordure assortie */
+    }
+
+    .btn-primary a:hover {
+      color: #1a0d94;           /* Couleur du texte au survol 1a0d94*/
+    }
+    
+    /* Effet de survol */
+    .btn-primary:hover {
+      background-color: gold; /* Teinte légèrement plus foncée */
+      border-color: gold;    /* Bordure assortie */
+      color: #000;
+    }
+
+    .btn-primary a:hover {
+      color: #000;           /* Couleur du texte au survol */
+    }
+
+    /* FIN DE MODIFICATION DES BOUTON SUR L'ENSEMBLE DE PAGES*/
+
+    /* DEBUT DE MODIFICATION : DOMAINE (AREA) */
+    .area-page{
+      margin-top: 70px;
+    }
+    .area-page .card-img-top {
+    height: 200px; /* Hauteur uniforme pour toutes les images */
+    object-fit: cover; /* Ajuster l'image sans déformation */
+  }
+
+    .area-page .area-detail h2{
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 25px;
+      color: peru;
+    }
+    .area-page .area-detail h2 a{
+      color: peru;
+      text-decoration: none;
+    }
+    .area-page .area-detail h3{
+      text-align: justify;
+      font-size: 30px;
+    }
+
+    .area-page .area-detail .section-area h5{
+      color: #012D53;
+    }
+    .area-page img{
+      display: block;
+      height: auto;
+      text-align: center;
+      margin-left: auto ;
+      margin-right: auto;
+      margin-bottom: 5px;
+    }
+    
+    .area-page .area-detail h4{
+      font-size: 20px;
+    }
+    .area-page .area-detail .title-name{
+      padding: 10px;
+      color: rebeccapurple;
+    }
+    .area-page h4 a{
+      color: peru;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+    }
+    .area-page .area-card h5 a{
+      color: #012D53;
+
+text-transform: lowercase;
+}
+
+    .area-page .area-card h5{
+      color: firebrick;
+      text-transform: lowercase;
+    }
+
+    .area-page .container .topic ul{
+      margin: 10px 10px;
+      font-size: 20px;
+    }
+
+    .area-page .container .topic ul li{
+      color: gold;
+      background-color: #012D53;
+    }
+    /* DEBUT DE LA MODIFICATION DE LA EQUIPE  */
+    .team-page{
+      margin-top: 70px;
+    }
+    
+     .team-page img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+    .team-page h6{
+      text-transform: capitalize;
+      font-weight: bold;
+      text-align: justify;
+      font-size: 15px;
+    }
+
+
+     .team-page .container a{
+      color: #012D53;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      text-decoration: none;
+     }
+    .team-page .container .lawyer{
+      color: #012D53;
+      font-size: 25px;
+      text-align: center;
+    }
+    .team-page .container .lawyer-name{
+      background-color: #012D53;
+      color: gold;
+      font-weight: bold;
+    }
+    .team-page .container .lawyer-text{
+      font-size: 15px;
+    }
+    .team-page .area-interest h4{
+      color: peru;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    /* FIN DE LA MODIFICATION DE LA PAGE  EQUIPE*/
+
+    /* DEBUT DE LA MODIFICATION DE LA PAGE ABOUT*/
+
+     .about-page .about-style{
+      margin-top: 70px;
+     }
+     .about-page .about-style h3{
+      font-size: 20px;
+      text-align: justify;
+     }
+     .about-page .about-style p{
+      font-size: 17px;
+      text-align: justify;
+     }
+     .about-page .about-style h3{
+      font-weight: bold;
+      font-size: 25px;
+      text-transform: uppercase;
+      text-align: center;
+     }
+     .about-page .about-style h3 a{
+      text-decoration: none;
+     }
+     .about-page .about-style img{
+      display: block;
+      width: 400px;
+      height: auto;
+      text-align: center;
+      margin-left: auto ;
+      margin-right: auto;
+      margin-bottom: 5px;
+    
+     }
+      /* FIN DE LA MODIFICATION DE LA PAGE ABOUT*/
+
+    /* FIN DE LA MODIFICATION DE LA PAGE  AREA*/
+
+    .footer {
+            background-color: #012D53;
+            padding: 0;
+        }
+        .footer-content {
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+    .footer-content img{
+      display: block;
+      width: 200px;
+      height: auto;
+      background-color: #fff;
+      text-align: center;
+      margin-left: auto ;
+      margin-right: auto;
+      margin-bottom: 10px;
+    }
+    .footer-content h5{
+      font-weight: bold;
+        font-size: 13px;
+        color: gold;
+        margin-bottom: 15px;
+
+        text-transform: uppercase;
+    }
+    .footer p{
+      font-size: 14px;
+      font-weight: bold;
+      color: #fff;
+    }
+    .footer-content ul li{
+      text-align: center;
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 15px 0px;
+  
+    }
+    .footer-content .detail{
+        font-size: 15px;
+        color: gold;
+    }
+    .footer-content p{
+        text-align: justify;
+    }
+
+    /* Responsive Design pour petits écrans */
+@media (max-width: 768px) {
+  .custom-navbar{
+      padding: 10px;
+    }
+
+    .carousel-item {
+        
+    }
+    .carousel-caption{
+      bottom: 200px;
+    z-index: 2;
+  }
+
+
+    .carousel-caption h2 {
+        font-size: 50px;
+    }
+
+    .carousel-caption h3 {
+      font-size: 30px;
+      margin-top: 10px;
+    }
+
+    .carousel-caption a {
+        font-size: 14px;
+    }
+    .card-text{
+      font-weight: lighter;
+      font-size: 15px;
+    }
+    .card ul li a{
+      font-size: 15px;
+    }
+
+    .branch{
+      font-size: 20px;
+      color: purple;
+    }
+    .contact-page .contact-text h3{
+      font-size: 23px;
+      color: #012D53;
+      margin-bottom: 10px;
+    }
+
+    .contact-page .contact-text h5{
+
+      margin-top: 15px;
+      font-size: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .custom-navbar{
+      padding: 10px;
+    }
+
+    .carousel-item {
+        height: 10vh;
+    }
+    .carousel-caption{
+    bottom: 80px;
+    z-index: 2;
+  }
+
+
+    .carousel-caption h2 {
+        font-size: 20px;
+        
+    }
+
+    .carousel-caption h3 {
+      color: gold;
+      font-size: 17px;
+      margin-top: 10px;
+    }
+
+    .carousel-caption a {
+        font-size: 20px;
+    }
+    .card-text{
+      font-weight: lighter;
+      font-size: 15px;
+    }
+    .card ul li a{
+      font-size: 15px;
+    }
+
+    .branch{
+      font-size: 20px;
+      color: #012D53;
+    }
+    .contact-page .contact-text h3{
+      font-size: 23px;
+      color: #012D53;
+    }
+
+    .contact-page .contact-text h5{
+
+      margin-top: 15px;
+      font-size: 15px;
+    }
+
+    .contact-page .form-container{
+      margin-top: 0;
+    }
+}
+
+
+
+</style>
+
+
+<body>
+
+
+    {% block content %}
+      
+    {% endblock content %}
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    document.getElementById("id_phone").addEventListener("input", function(event) {
+                        this.value = this.value.replace(/\D/g, ''); // Supprime tous les caractères non numériques
+                    });
+                });
+                </script>
+</body>
+</html>

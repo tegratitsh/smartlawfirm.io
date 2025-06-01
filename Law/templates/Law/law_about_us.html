@@ -1,0 +1,43 @@
+{% extends "templates_bases.html" %}
+
+
+{% load static %}
+
+
+{% block content %}
+
+{% include "Law/law_navbar.html" %}
+
+
+<body class="about-page">
+        <div class="container about-style">
+                <div class="row">
+                        <div class="col-sm-6">
+                                <h2 class="field-smart">QUI SOMMES-NOUS ?</h2>
+                                <p><strong style="color: #012D53;">SMART LAW FIRM</strong> est un cabinet Juridique de Consultation, de Conseil et d'Assistance juridique, Son siège se situe dans la Ville/Province de Kinshasa, en République Démocratique du Congo.</p>
+                                <p>Nous nous engageons à vous offrir des solutions juridiques viables et efficaces, vous fournir des informations véridiques et nous vous accompagneront dans votre quête des documents juridiques crédibles.</p>
+                                <p>Notre équipe d'avocats expérimentés est là pour vous guider pas à pas suivant vos attentes en mettant à votre disposition des services personnalisés.</p>
+
+                    
+                                <h3>
+                                        <a href="{% url 'law-contact' %}" class='branch'>Besoin d'un rendez-vous !</a>
+                                </h3>
+                        
+                        </div>
+                        <div class="col-sm-6">
+                                <img src="{% static 'images/smart_law_firm_logo.png' %}" alt='smart-law-firm' />
+                
+                        </div>
+                </div>
+
+        
+        
+x
+       
+        </div>
+        
+</body>
+{% include "Law/law_footer.html" %}
+
+
+{% endblock content %}

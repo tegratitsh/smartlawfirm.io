@@ -1,0 +1,80 @@
+{% extends "templates_bases.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% include "Law/law_navbar.html" %}
+
+<body class="contact-page">
+
+<div class="container contact-text">
+
+  <h3>Besoin d'Assistance Juridique ?</h3>
+
+  <p>Le cabinet juridique  <strong style="color: #012D53;">SMART LAW FIRM</strong>  met son expertise à votre service pour vous accompagner dans la création de votre entreprise, la gestion des transactions immobilières et la rédactions de documents juridiques. Avec une équipe de professionnels qualifiés, nous vous garantissons des conseils avisés et une assistance adoptée à vos besoins.</p>
+    <img src="{% static 'images/smart_law_firm_logo.png' %}" alt='smart-law-firm' />
+                
+    <div class="row">
+        <div class="col-lg-6 col-sm-12">
+            <h2>Nos Coordonnées</h2>
+            <hr>
+            <h6>Email : smartlawfirm@cabjuridique.com</h6>
+            <h6>Téléphone : + (243) 85 624 81 81 (WhatsApp), <br> + (243) 81 059 53 52 (Appel & SMS)</h6>
+            <h6>Site Web : https://www.smartlawfirm.com (Bientôt disponible)</h6>
+            <h6>Adresse : 35, Avenue Ngafula, Quartier Finda, Commune de Ngaliema (Ref. Centre Supérieur) Kinshasa, RDC.</h6>
+
+        </div>
+    </div>
+    <hr>
+    <h3>Besoin d'un Rendez-vous ?</h3>
+    
+
+  
+<!-- Page contact -->
+    <div class="contact-form">
+        <div class="form-container bg-form bg-image">
+            <p class="text-center">Remplissez le formulaire ci-dessous et nous vous contacterons dans les plus brefs délais.</p>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <button type="submit" class="btn btn-primary">Envoyez</button>
+            </form>
+
+            {% if form.errors %}
+    <div class="alert alert-danger">
+        <ul>
+            {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                    <li>{{ field }} : {{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    
+{% endif %}
+            
+                
+
+        </div>
+    </div>
+           
+    <!-- Contenu de la page -->
+
+
+
+
+
+  
+</div>
+  
+
+
+</body>
+
+{% include "Law/law_footer.html" %}
+
+
+{% endblock content %}

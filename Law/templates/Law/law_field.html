@@ -1,0 +1,75 @@
+{% extends "templates_bases.html" %}
+
+
+
+{% block content %}
+{% include "Law/law_navbar.html" %}
+
+
+
+<body class="area-page">
+
+    
+
+
+<div class="container">
+
+    <div class="container">
+    <h2 class="field-smart">SMART LAW FIRM</h2>
+    <h3 class="field-context">Cabinet Juridique de Consultation, Conseil et Assistance juridique</h3>
+</div>
+<hr>
+
+
+     <h2 class="text-center branch">NOS PRINCIPAUX DOMAINES D'INTERVENTION</h2>
+
+    <div class="row align-buttons">
+        {% for field in fields %}
+        
+        <div class="image-container col-lg-4 col-sm-12">
+            <div class="card area-card">
+                
+                <h4 class="card-title text-center">
+                    <a href="{% url 'law-field'%}">{{ field.name }}</a>
+                </h4>
+                <img src="{{ field.image.url }}" class="card-img-top" alt="{{ field.name }}">
+                <div class="card-body">
+                    
+                    <hr>
+                     <p class="card-text">{{ field.topic_name }}</p>
+                     
+                </div>
+                
+          </div>
+    </div>
+    {% endfor %}
+    </div>
+    <hr>
+
+    <div class="container">
+    <h2 class="field-context">Nous mettons notre expertise à votre service dans les domaines juridiques essentiels à votre succès.</h2>
+</div>
+
+
+    <div class="row topic">
+        {% for topic in topics %}
+        <div class="col-lg-4">
+            <ul class="list-group">
+                <li class="list-group-item ">{{ topic.name }}</li>
+            </ul>
+        </div>
+          {% endfor %}
+ </div>
+ <div class="alert alert-success field-tag">
+  <strong>Désormais !</strong>  vous aurez une personnalité juridique qui renforcera votre crédibilité en tant qu'entrepreneur. 
+        Sécurisez vos transactions immobilières grâce à une rédaction officielle garantissant leur validité. 
+        Affirmez votre présence sur le marché avec une structure légale qui inspire confiance et professionnalisme.
+</div>
+
+         </div>
+
+         
+
+{% include "Law/law_footer.html" %}
+  
+{% endblock content %}

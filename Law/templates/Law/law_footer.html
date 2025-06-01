@@ -1,0 +1,40 @@
+{% load static %}
+<footer class="footer">
+    <div class="footer-content container-fluid">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-4 col-sm-12">
+                <h5>Cabinet Juridique de Consultation, Conseil et Assistance juridique</h5>
+                <img src="{% static 'images/smart_law_firm_logo.png' %}" alt="smart-law-firm" class="img-fluid">
+                <hr>
+                <p>35, Avenue Ngafula, Quartier Finda, Commune de Ngaliema (Ref. Centre Supérieur) Kinshasa, RDC.</p>
+                <hr>
+                <p class="text-center detail">Version: SLF_1.03</p>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h5>Domaines D'INTERVENTION</h5>
+                <ul class="list-unstyled">
+                    {% for topic in topics %}
+                    <li>{{topic.name}}</li>
+                    <hr>
+                    {% endfor %}
+                    
+                </ul>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h5>À PROPOS D'ELITEROOM</h5>
+                <p>
+                    Elite-Room est une startup dynamique spécialisée dans l'informatique, offrant des services innovants pour accompagner les entreprises et particuliers dans leur transformation numérique. Elle propose la création de sites web modernes et responsifs, adaptés aux besoins spécifiques de chaque client.
+                </p>
+                <hr>
+                <p class="detail">
+                    Appel & SMS : + (243) 85 009 65 25 <br>WhatsApp : + (243) 82 748 35 38 <br>
+                    Email: tegratshibanda20@gmail.com
+                </p>
+                <hr>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <p class="text-center">Développé par @eliteroom, Tous droits réservés !</p>
+        </div>
+    </div>
+</footer>

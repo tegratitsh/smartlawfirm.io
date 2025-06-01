@@ -1,0 +1,26 @@
+
+<div class="container">
+    <div class="row">
+        {% for topic in topics %}
+        <div class="col-lg-6 ">
+            <div class="card">
+                <div class="card-header">
+                    <a href="">{{ topic.name }}</a></a>
+                </div>
+                <ul class="list-group list-group-flush">
+                    {% for title in topic.title_set.all %} 
+                        <li class="list-group-item">
+                            <a  href="#">{{ title.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                
+              </div>
+              
+        </div>
+        {% endfor %}
+    </div>
+<hr>
+</div>
+
+
