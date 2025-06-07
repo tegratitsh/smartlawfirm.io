@@ -1,33 +1,43 @@
 {% extends "templates_bases.html" %}
+
+
+{% load static %}
+
+
 {% block content %}
+
 {% include "Law/law_navbar.html" %}
 
-<body class="team-page">
-  <div class="container">
-    <h5 class="lawyer">Decouvrer les experts qui vous accompagnent dans tous vos besoins légaux.</h5>
 
-    <div class="row">
-      {% for lawyer in lawyers %}
-        <div class="card" style="width: 22rem;">
-          <img src="{{ lawyer.image.url }}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="lawyer-name">Me. {{lawyer.full_name}}</h5>
-            <h5 class="lawyer-name">{{lawyer.first_name}}</h5>
-            <hr>
-            
-            <p class=" lawyer-text">{{lawyer.description}}</p>
-            <p class=" lawyer-text"  style="text-align: right; color: peru;" >{{lawyer.domain}}</p>
-          </div>
+<body class="about-page">
+        <div class="container about-style">
+                <div class="row">
+                        <div class="col-sm-6">
+                                <h2 class="field-smart">QUI SOMMES-NOUS ?</h2>
+                                <p><strong style="color: #012D53;">SMART LAW FIRM</strong> est un cabinet Juridique de Consultation, de Conseil et d'Assistance juridique, Son siège se situe dans la Ville/Province de Kinshasa, en République Démocratique du Congo.</p>
+                                <p>Nous nous engageons à vous offrir des solutions juridiques viables et efficaces, vous fournir des informations véridiques et nous vous accompagneront dans votre quête des documents juridiques crédibles.</p>
+                                <p>Notre équipe d'avocats expérimentés est là pour vous guider pas à pas suivant vos attentes en mettant à votre disposition des services personnalisés.</p>
+
+                    
+                                <h3>
+                                        <a href="{% url 'law-contact' %}" class='branch'>Besoin d'un rendez-vous !</a>
+                                </h3>
+                        
+                        </div>
+                        <div class="col-sm-6">
+                                <img src="{% static 'images/about_us.jpg' %}" alt='smart-law-firm' />
+                
+                        </div>
+                </div>
+
+        
+        
+x
+       
         </div>
-      {% endfor %}
-    </div>
-  </div>
-  </body>
+        
+</body>
+{% include "Law/law_footer.html" %}
 
-  {% include "Law/law_footer.html" %}
-    
 
 {% endblock content %}
-
-
-
